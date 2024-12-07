@@ -3,6 +3,44 @@
 👋 私域引流宝致力于为个人、团队提供基于微信私域流量的推广、引流的效率工具。可减轻人力，有效降低资源损失、流量流失的几率。引流宝完全开源，免费，可商用、可任意二次开发。引流宝可以辅助你更好地开展营销活动推广！降低运营成本，提高工作效率，获取更多资源。
 <br/>
 
+## 运行 By Docker
+
+1. start MySQL
+
+```
+$ docker run --rm --name  test-mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=test123 -d mysql:latest
+
+```
+
+2. create database
+
+```
+mysql -h 127.0.0.1 -u root -ptest123
+create database ylb;
+```
+
+3. start
+
+```
+ docker run -it --rm -p 8088:8080 -v $PWD:/var/www/html trafex/alpine-nginx-php7:1.10.0
+```
+
+4. 安装
+
+```
+http://{host}:8088/install/install.html
+```
+
+```
+10.0.0.12
+root test123
+ylb test@test.com
+admin test123
+根目录
+```
+
+
+
 ## 免备案服务器推荐
 https://www.rainyun.com/TANKING_
 

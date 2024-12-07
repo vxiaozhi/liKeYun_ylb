@@ -22,7 +22,7 @@ create database ylb;
 3. start
 
 ```
- docker run -it --rm -p 8088:8080 -v $PWD:/var/www/html trafex/alpine-nginx-php7:1.10.0
+ docker run -it --rm -p 8080:8080 -v $PWD:/var/www/html trafex/alpine-nginx-php7:1.10.0
 ```
 
 注意：trafex/alpine-nginx-php7:1.10.0 由于php中没有集成 pdo-mysql扩展，会导致登陆出错，采用下面的Dockefile重编镜像：
@@ -32,7 +32,7 @@ https://github.com/vxiaozhi/docker-php-nginx/tree/php-7
 4. 安装
 
 ```
-http://{host}:8088/install/install.html
+http://{host}:8080/install/install.html
 ```
 
 ```
@@ -42,6 +42,10 @@ ylb test@test.com
 admin test123
 根目录
 ```
+
+5. 成功体验
+   
+登陆后，打开进入控制台主页： http://{host}:8080/console/index/
 
 
 

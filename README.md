@@ -25,6 +25,10 @@ create database ylb;
  docker run -it --rm -p 8088:8080 -v $PWD:/var/www/html trafex/alpine-nginx-php7:1.10.0
 ```
 
+注意：trafex/alpine-nginx-php7:1.10.0 由于php中没有集成 pdo-mysql扩展，会导致登陆出错，采用下面的Dockefile重编镜像：
+https://github.com/vxiaozhi/docker-php-nginx/tree/php-7
+
+
 4. 安装
 
 ```
